@@ -1,0 +1,78 @@
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+body {
+  margin: 0;
+}
+
+/* Disable ugly boxes around images in IE10 */
+a img{
+  border: 0px;
+}
+
+.mdl-layout__header-row {
+  padding-right: 10px;
+}
+
+.mdl-layout__content {
+  background-image: url(https://cdn.shopify.com/s/files/1/0186/8104/files/90s_Saved_By_The_Bell_Background_Graphics_4_grande.png?1177);
+  background-size: cover;
+
+}
+section.mdl-grid {
+  margin: 10px!important;
+}
+
+.mdl-textfield--expandable {
+  width: auto;
+}
+
+
+.android-logo-image {
+  height: 28px;
+  width: 140px;
+}
+
+
+.android-header {
+  overflow: visible;
+  background-color: #3f51b5;
+}
+
+  .android-header .material-icons {
+    color: #ffffff !important;
+  }
+
+  
+
+.logo-font {
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  line-height: 1;
+  color: #767777;
+  font-weight: 500;
+}
+
+
+
+
+/**** Mobile layout ****/
+@media (max-width: 900px) {
+ 
+
+  .android-more-button {
+    display: none;
+  }
+}
