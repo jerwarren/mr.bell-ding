@@ -22,7 +22,17 @@ body {
 a img{
   border: 0px;
 }
-
+#logo {
+    margin-top: -180px;
+    width: 240px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 3;
+    position:relative;
+}
+.mdl-layout__header {
+  height: 180px!important;
+}
 .mdl-layout__header-row {
   padding-right: 10px;
 }
@@ -30,6 +40,7 @@ a img{
 .mdl-layout__content {
   background-image: url(https://cdn.shopify.com/s/files/1/0186/8104/files/90s_Saved_By_The_Bell_Background_Graphics_4_grande.png?1177);
   background-size: cover;
+  margin-top: 10px;
 
 }
 section.mdl-grid {
