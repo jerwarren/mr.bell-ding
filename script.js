@@ -13,6 +13,30 @@ document.addEventListener("DOMContentLoaded", function() {
     if('serviceWorker' in navigator) {
         navigator.serviceWorker.register('sw.js');
     }
+    var hidden, visibilityChange; 
+
+    if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
+        hidden = "hidden";
+        visibilityChange = "visibilitychange";
+    } else if (typeof document.msHidden !== "undefined") {
+        hidden = "msHidden";
+        visibilityChange = "msvisibilitychange";
+    } else if (typeof document.webkitHidden !== "undefined") {
+        hidden = "webkitHidden";
+        visibilityChange = "webkitvisibilitychange";
+    }
+    
+    var videoElement = document.getElementById("video");
+
+    // If the page is hidden, pause the video;
+    // if the page is shown, play the video
+    function handleVisibilityChange() {
+    if (document[hidden]) {
+        videoElement.pause();
+    } else {
+        videoElement.play();
+    }
+    }
 });
 
 
