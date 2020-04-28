@@ -51,8 +51,10 @@ var videoElement = document.getElementById("video");
 function handleVisibilityChange() {
   if (document[hidden]) {
     videoElement.pause();
+    console.log("pausing");
   } else {
     videoElement.play();
+    console.log("resuming");
   }
 }
 
