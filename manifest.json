@@ -2,7 +2,7 @@
 {
   "name": "Mr. Bell-Ding",
   "short_name": "Mr. Bell-Ding",
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
   "theme_color": "#c5ea53",
   "background_color":"#ddacf6",

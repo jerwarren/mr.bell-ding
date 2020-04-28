@@ -126,5 +126,10 @@
       </main>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script src="script.js"></script>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('sw.js');
+    }
+    </script>
   </body>
 </html>

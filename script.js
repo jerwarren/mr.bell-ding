@@ -2,6 +2,7 @@ const preview = document.querySelector('audio');
 var title = "Mr. Bell-Ding";
 
 document.addEventListener("DOMContentLoaded", function() {
+    
     if (localStorage.getItem("customSoundName") !== null){
         preview.src = localStorage.getItem("customSound");
     } else {
@@ -10,9 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
     checkTime();
     
-    if('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('sw.js');
-    }
     var hidden, visibilityChange; 
 
     if (typeof document.hidden !== "undefined") { // Opera 12.10 and Firefox 18 and later support 
