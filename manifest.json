@@ -8,8 +8,8 @@
   "background_color":"#ddacf6",
   "icons": [
     {
-      "src": "BellDing-4.27.20-bg.svg",
+      "src": "icon.png",
       "sizes": "512x512",
-      "type": "image/svg"
+      "type": "image/png"
     }]
 }
