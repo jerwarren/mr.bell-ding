@@ -1,0 +1,15 @@
+
+{
+  "name": "Mr. Bell-Ding",
+  "short_name": "Mr. Bell-Ding",
+  "start_url": "index.html",
+  "display": "standalone",
+  "theme_color": "#c5ea53",
+  "background_color":"#ddacf6",
+  "icons": [
+    {
+      "src": "friends.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }]
+}
