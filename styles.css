@@ -47,6 +47,7 @@ audio {
   width: 100%;
   margin-bottom: 25px;
   outline: none!important;
+  opacity: 0.6
 }
 .custom {
   padding-left: 15px;
@@ -101,7 +102,9 @@ section.mdl-grid {
   width: 140px;
 }
 
-
+.android-drawer {
+  background-color: #c5ea53;
+}
 .android-header {
   overflow: visible;
   background-color: #4d1893;
