@@ -45,7 +45,7 @@ audio {
   width: 100%;
   margin-bottom: 25px;
   outline: none!important;
-  opacity: 0.6
+  opacity: 0.6;
 }
 .custom {
   padding-left: 15px;
