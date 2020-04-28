@@ -151,7 +151,7 @@ b br {
 }
 
 .mdl-switch.is-checked .mdl-switch__thumb {
-  background-color: #fff;
+  background-color: #4d1893;
 }
 
 @media screen and (min-width: 840px){
