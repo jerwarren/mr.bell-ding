@@ -55,6 +55,7 @@ audio {
 }
 .about {
   position: fixed;
+  width: 290px;
   bottom: 0;
   right: 0;
   padding-right: 20px;
