@@ -54,15 +54,10 @@ audio {
   padding-right: 15px;
 }
 
-/*
+
 .about {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding-right: 20px;
-  text-align: left;
+width: 100%;
 }
-*/
 .about a {
   font-weight: bold;;
   color: #4d1893
@@ -70,7 +65,10 @@ audio {
 
 .about b {
   font-size: 16px;
-  color: #4d1893
+  color: #4d1893;
+  font-size: 3.2vw;
+  line-height: 3.25vw;
+
 }
 .credits {
   position:relative;
@@ -150,7 +148,11 @@ section.mdl-grid {
   font-weight: 500;
 }
 
-@media screen and (min-width: 900px){
+b br {
+  display:none;
+}
+
+@media screen and (min-width: 840px){
   .about {
     position: absolute;
     bottom: 0;
@@ -158,4 +160,5 @@ section.mdl-grid {
     padding-right: 20px;
     text-align: left;
   }
+  
 }
