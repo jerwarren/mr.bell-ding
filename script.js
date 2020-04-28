@@ -43,18 +43,6 @@ if (typeof document.addEventListener === "undefined" || hidden === undefined) {
 } else {
   // Handle page visibility change   
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
-    
-  // When the video pauses, set the title.
-  // This shows the paused
-  videoElement.addEventListener("pause", function(){
-    document.title = 'Paused';
-  }, false);
-    
-  // When the video plays, set the title.
-  videoElement.addEventListener("play", function(){
-    document.title = 'Playing'; 
-  }, false);
-
 }
 
 
