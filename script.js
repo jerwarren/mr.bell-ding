@@ -13,6 +13,9 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("top-of-hour") === null){
         console.log("no top of hour");
         localStorage.setItem("top-of-hour", "true");
+
+        setTimeout(function(){document.querySelector('.mdl-layout__drawer-button').click()}, 2000);
+
     } else {
         if (localStorage.getItem("top-of-hour") == "true"){
             document.querySelector('.mdl-js-switch[name="top-of-hour"]').click()
