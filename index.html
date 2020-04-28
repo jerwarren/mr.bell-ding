@@ -68,36 +68,22 @@
           <ul class="demo-list-control mdl-list">
             <div class="custom">
               Ding every hour at:
+              <br><br>
+              <label name="top-of-hour" for="top-of-hour" class="mdl-switch mdl-js-switch ">
+                <input type="checkbox" id="top-of-hour" class="mdl-switch__input" onchange="setTimeout(function(){settingChange('top-of-hour')}, 1000)">
+                <span class="mdl-switch__label">:00 </span>
+              </label>
+
+              <br><br>
+              <label name="bottom-of-hour" for="bottom-of-hour" class="mdl-switch mdl-js-switch ">
+                <input type="checkbox" id="bottom-of-hour" class="mdl-switch__input" onchange="setTimeout(function(){settingChange('bottom-of-hour')}, 1000)">
+                <span class="mdl-switch__label">:30 </span>
+              </label>
+              <br><br>          
+              <p>Want to use a custom sound?</p>
+              <input type="file" accept="audio/*" onchange="previewFile()">
+              <audio controls></audio>
             </div>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                :00
-              </span>
-              <span class="mdl-list__item-secondary-action">
-                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-                  <input type="checkbox" id="switch-top-hour" class="mdl-switch__input" checked disabled title="toggle-ability coming soon">
-                  <span class="mdl-switch__label"></span>
-                </label>
-              </span>
-            </li>
-            <li class="mdl-list__item">
-              <span class="mdl-list__item-primary-content">
-                :30
-              </span>
-              <span class="mdl-list__item-secondary-action">
-                <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-1">
-                  <input type="checkbox" id="switch-bottom-hour" class="mdl-switch__input" disabled title="toggle-ability coming soon">
-                  <span class="mdl-switch__label"></span>
-                </label>
-              </span>
-            </li>
-          </ul>
-          <div class="custom">
-            
-            <p>Want to use a custom sound?</p>
-            <input type="file" accept="audio/*" onchange="previewFile()">
-            <audio controls></audio>
-          </div>
         
           <a id="view-source" title="custom ding times coming soon" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="margin-right: 20px; margin-bottom: 20px;" disabled>
             <i class="material-icons">add</i>

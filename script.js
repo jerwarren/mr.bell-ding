@@ -8,7 +8,26 @@ document.addEventListener("DOMContentLoaded", function() {
     } else {
         console.log('no local storage')
         preview.src = "school-bell.mp3";
+    }    
+    
+    if (localStorage.getItem("top-of-hour") === null){
+        console.log("no top of hour");
+        localStorage.setItem("top-of-hour", "true");
+    } else {
+        if (localStorage.getItem("top-of-hour") == "true"){
+            document.querySelector('.mdl-js-switch[name="top-of-hour"]').click()
+        }
     }
+
+    if (localStorage.getItem("bottom-of-hour") === null){
+        console.log("no bottom of hour");
+        localStorage.setItem("bottom-of-hour", "false");
+    } else {
+        if (localStorage.getItem("bottom-of-hour") == "true"){
+            document.querySelector('.mdl-js-switch[name="bottom-of-hour"]').click()
+        }
+    }
+    
     checkTime();
 });
 
@@ -62,15 +81,39 @@ function previewFile() {
 
 function checkTime() {
     var d = new Date();
-    if (d.getMinutes() == 00 && d.getSeconds() == 00 ) {
-        console.log("ding");
-        console.log(d.getHours());
-        preview.play();
-        document.title = title + "&nbsp;";
-    } else if (d.getSeconds() == 01) {
-        document.title = title;
+    if ( localStorage.getItem("top-of-hour") == "true" ){
+        if ( d.getMinutes() == 00 && d.getSeconds() == 00 ) {
+            preview.play();
+            document.title = title + "&nbsp;";
+        } else if (d.getSeconds() == 01) {
+            document.title = title;
+        }
+    }
+    if ( localStorage.getItem("bottom-of-hour") == "true") {
+        if ( d.getMinutes() == 30 && d.getSeconds() == 00 ) {
+            console.log("ding");
+            console.log(d.getHours());
+            preview.play();
+            document.title = title + "&nbsp;";
+        } else if (d.getSeconds() == 31) {
+            document.title = title;
+        }
     }
     setTimeout(checkTime, 501);
+}
+
+function settingChange(setting) {
+    console.log(setting);
+    field = document.getElementsByName(setting)[0];
+    console.log(field.classList);
+    
+    if (field.classList.contains("is-checked")) {
+        localStorage.setItem(setting, "true");
+    } else {
+        localStorage.setItem(setting, "false");
+    }
+
+    return true;
 }
 
 function ding() {
