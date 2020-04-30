@@ -2,6 +2,7 @@ const preview = document.querySelector('audio');
 var title = "Mr. Bell-Ding";
 
 document.addEventListener("DOMContentLoaded", function() {
+    setTimeout(function(){document.querySelector('.mdl-layout__drawer-button').click()}, 1000);
 
     if (localStorage.getItem("customSoundName") !== null){
         preview.src = localStorage.getItem("customSound");
@@ -12,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("top-of-hour") === null){
         console.log("no top of hour");
         localStorage.setItem("top-of-hour", "true");
-
-        setTimeout(function(){document.querySelector('.mdl-layout__drawer-button').click()}, 2000);
 
     } else {
         if (localStorage.getItem("top-of-hour") == "true"){
