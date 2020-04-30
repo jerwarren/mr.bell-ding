@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", function() {
     if (localStorage.getItem("customSoundName") !== null){
         preview.src = localStorage.getItem("customSound");
     } else {
-        console.log('no local storage')
         preview.src = "school-bell.mp3";
     }    
     
@@ -23,14 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     if (localStorage.getItem("bottom-of-hour") === null){
-        console.log("no bottom of hour");
         localStorage.setItem("bottom-of-hour", "false");
     } else {
         if (localStorage.getItem("bottom-of-hour") == "true"){
             document.querySelector('.mdl-js-switch[name="bottom-of-hour"]').click()
         }
     }
-    
     checkTime();
 });
 
@@ -54,16 +51,14 @@ var videoElement = document.getElementById("video");
 function handleVisibilityChange() {
   if (document[hidden]) {
     videoElement.pause();
-    console.log("pausing");
+    console.log("pausing video background");
   } else {
     videoElement.play();
-    console.log("resuming");
+    console.log("resuming video background");
   }
 }
 
-// Warn if the browser doesn't support addEventListener or the Page Visibility API
 if (typeof document.addEventListener === "undefined" || hidden === undefined) {
-  console.log("This demo requires a browser, such as Google Chrome or Firefox, that supports the Page Visibility API.");
 } else {
   // Handle page visibility change   
   document.addEventListener(visibilityChange, handleVisibilityChange, false);
@@ -88,20 +83,13 @@ function checkTime() {
     var d = new Date();
     if ( localStorage.getItem("top-of-hour") == "true" ){
         if ( d.getMinutes() == 00 && d.getSeconds() == 00 ) {
-            preview.play();
-            document.title = title + "&nbsp;";
-        } else if (d.getSeconds() == 01) {
-            document.title = title;
+            ding("bottom");
         }
     }
     if ( localStorage.getItem("bottom-of-hour") == "true") {
         if ( d.getMinutes() == 30 && d.getSeconds() == 00 ) {
-            console.log("ding");
-            console.log(d.getHours());
-            preview.play();
+            ding("top");
             document.title = title + "&nbsp;";
-        } else if (d.getSeconds() == 31) {
-            document.title = title;
         }
     }
     setTimeout(checkTime, 501);
@@ -121,6 +109,14 @@ function settingChange(setting) {
     return true;
 }
 
-function ding() {
+function ding(slot) {
+    document.title = title + " 🔔";
     preview.play();
+    setTimeout(function(){document.title = title;}, 3000);
+
+    gtag('event', 'ding', {
+        'event_category': slot,
+        'event_label': slot + ' ding',
+        'value': Math.round((new Date()).getTime() / 1000)
+      });
 }
