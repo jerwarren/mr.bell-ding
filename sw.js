@@ -1,15 +1,11 @@
 self.addEventListener('install', function(event) {
 	event.waitUntil(
-		caches.open('sw-cache2').then(function(cache) {
-			return cache.add('index.html');
+		caches.open('sw-cache').then(function(cache) {
 			return cache.addAll([
-        'index.html',
-        'BellDing-4.27.20-bg.svg',
-        'school-bell.mp3',
-        'script.js',
-				'styles.css',
+				'BellDing-4.27.20-bg.svg',
+				'school-bell.mp3',
 				'logo.png'
-      ]);
+			]);
 		})
 	);
 });
