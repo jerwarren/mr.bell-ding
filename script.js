@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }    
     
     if (localStorage.getItem("top-of-hour") === null){
-        console.log("no top of hour");
         localStorage.setItem("top-of-hour", "true");
 
     } else {
@@ -71,6 +70,13 @@ function previewFile() {
         localStorage.setItem("customSound", reader.result)
         localStorage.setItem("customSoundName", file.name);
         preview.src = localStorage.getItem("customSound");
+        
+        gtag('event', 'setting', {
+            'event_category': 'sound',
+            'event_label': 'added custom sound',
+            'value': customSoundName
+        });
+
     }, false);
 
     if (file) {
@@ -95,10 +101,8 @@ function checkTime() {
 }
 
 function settingChange(setting) {
-    console.log(setting);
     field = document.getElementsByName(setting)[0];
-    console.log(field.classList);
-    
+        
     if (field.classList.contains("is-checked")) {
         localStorage.setItem(setting, "true");
     } else {
@@ -117,5 +121,5 @@ function ding(slot) {
         'event_category': slot,
         'event_label': slot + ' ding',
         'value': Math.round((new Date()).getTime() / 1000)
-      });
+    });
 }

@@ -147,7 +147,7 @@ section.mdl-grid {
 }
 
 b br {
-  display:none;
+  /*display:none;*/
 }
 
 .mdl-switch.is-checked .mdl-switch__thumb {
